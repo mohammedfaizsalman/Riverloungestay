@@ -5,536 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="River Lounge Stay is a modern luxury homestay in Sakleshpur, Karnataka offering curated nature experiences and premium rooms."
+      content="River Lounge Stay is a premium luxury homestay in Sakleshpur, Karnataka with curated rooms, scenic ambience, and direct WhatsApp booking."
     />
+    <meta name="theme-color" content="#0f2f24" />
     <title>River Lounge Stay | Luxury Homestay in Sakleshpur</title>
-    <style>
-      :root {
-        --bg: #f7f8f7;
-        --surface: #ffffff;
-        --text: #17201b;
-        --muted: #5f6f65;
-        --primary: #123d2e;
-        --primary-2: #0b2a20;
-        --accent: #d4e2da;
-        --shadow: 0 12px 28px rgba(10, 19, 15, 0.12);
-        --radius-xl: 24px;
-        --radius-lg: 18px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Inter", "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        scroll-behavior: smooth;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      .container {
-        width: min(1120px, 92vw);
-        margin: 0 auto;
-      }
-
-      .section {
-        padding: 5.5rem 0;
-      }
-
-      .section-title {
-        font-size: clamp(1.75rem, 2.6vw, 2.5rem);
-        margin: 0 0 0.9rem;
-        line-height: 1.2;
-      }
-
-      .section-copy {
-        color: var(--muted);
-        max-width: 680px;
-        line-height: 1.7;
-        margin: 0;
-      }
-
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(255, 255, 255, 0.86);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(18, 61, 46, 0.08);
-      }
-
-      .topbar-inner {
-        min-height: 74px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .brand-mark {
-        width: 40px;
-        aspect-ratio: 1;
-        border-radius: 14px;
-        background: linear-gradient(145deg, var(--primary), var(--primary-2));
-        box-shadow: var(--shadow);
-      }
-
-      .brand-name {
-        font-weight: 700;
-        letter-spacing: 0.01em;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-        color: #2e3e36;
-      }
-
-      .nav a {
-        font-size: 0.96rem;
-        padding: 0.25rem 0.2rem;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.45rem;
-        font-weight: 600;
-        border-radius: 999px;
-        border: none;
-        padding: 0.85rem 1.45rem;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn-primary {
-        background: var(--primary);
-        color: #fff;
-        box-shadow: var(--shadow);
-      }
-
-      .btn-primary:hover {
-        background: var(--primary-2);
-      }
-
-      .btn-outline {
-        border: 1px solid rgba(18, 61, 46, 0.2);
-        background: #fff;
-        color: var(--primary-2);
-      }
-
-      .hero {
-        min-height: calc(100vh - 74px);
-        display: grid;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        color: #fff;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            100deg,
-            rgba(6, 12, 10, 0.78),
-            rgba(10, 26, 18, 0.53)
-          ),
-          url("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1900&q=80")
-            center/cover no-repeat;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        padding: 5rem 0;
-        max-width: 760px;
-      }
-
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.16);
-        border: 1px solid rgba(255, 255, 255, 0.34);
-        font-size: 0.9rem;
-        margin-bottom: 1.2rem;
-      }
-
-      .hero h1 {
-        margin: 0;
-        font-size: clamp(2.2rem, 5vw, 4.2rem);
-        line-height: 1.05;
-      }
-
-      .hero p {
-        font-size: 1.08rem;
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        margin-top: 1.5rem;
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 1.4rem;
-        margin-top: 2.3rem;
-      }
-
-      .card {
-        background: var(--surface);
-        border-radius: var(--radius-xl);
-        box-shadow: var(--shadow);
-        padding: 1.4rem;
-      }
-
-      .about-photo {
-        min-height: 280px;
-        border-radius: var(--radius-xl);
-        background: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80")
-          center/cover no-repeat;
-      }
-
-      .rooms-grid,
-      .exp-grid,
-      .gallery-grid {
-        margin-top: 2.2rem;
-        display: grid;
-        gap: 1rem;
-      }
-
-      .rooms-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .room-card h3 {
-        margin: 0 0 0.45rem;
-      }
-
-      .room-card p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .exp-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .exp-item {
-        border-radius: var(--radius-lg);
-        padding: 1.2rem;
-        background: #fff;
-        border: 1px solid rgba(18, 61, 46, 0.08);
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .gallery-item {
-        overflow: hidden;
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow);
-      }
-
-      .gallery-item img {
-        height: 220px;
-        width: 100%;
-        object-fit: cover;
-      }
-
-      .map-wrap iframe {
-        width: 100%;
-        min-height: 390px;
-        border: 0;
-        border-radius: var(--radius-xl);
-        box-shadow: var(--shadow);
-      }
-
-      .contact-box {
-        margin-top: 2rem;
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-      }
-
-      .contact-lines {
-        line-height: 1.8;
-      }
-
-      .contact-lines strong {
-        color: var(--primary-2);
-      }
-
-      .floating-whatsapp {
-        position: fixed;
-        right: 18px;
-        bottom: 18px;
-        z-index: 70;
-        background: #25d366;
-        color: #fff;
-        border-radius: 999px;
-        padding: 0.9rem 1.3rem;
-        font-weight: 700;
-        box-shadow: 0 10px 24px rgba(20, 88, 47, 0.32);
-      }
-
-      footer {
-        padding: 2rem 0;
-        border-top: 1px solid rgba(18, 61, 46, 0.1);
-        color: var(--muted);
-      }
-
-      @media (max-width: 980px) {
-        .rooms-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .gallery-grid,
-        .exp-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .about-grid,
-        .contact-box {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .topbar-inner {
-          flex-direction: column;
-          padding: 0.75rem 0;
-        }
-
-        .nav {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .hero {
-          min-height: 70vh;
-        }
-
-        .rooms-grid,
-        .gallery-grid,
-        .exp-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a href="#home" class="brand" aria-label="River Lounge Stay Home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name">River Lounge Stay</span>
+    <header class="header" id="home">
+      <div class="container nav-wrap">
+        <a class="logo" href="#home" aria-label="River Lounge Stay home">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span>River Lounge Stay</span>
         </a>
-        <nav class="nav">
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+          ☰
+        </button>
+
+        <nav class="nav" id="siteNav">
           <a href="#about">About</a>
           <a href="#rooms">Rooms</a>
-          <a href="#experience">Experience</a>
           <a href="#gallery">Gallery</a>
+          <a href="#experience">Experience</a>
           <a href="#location">Location</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero section">
+      <div class="hero-bg" role="img" aria-label="Misty mountains and forest in Sakleshpur"></div>
+      <div class="overlay"></div>
       <div class="container hero-content">
-        <span class="hero-badge">Sakleshpur, Karnataka</span>
-        <h1>Luxury Nature Escape at River Lounge Stay</h1>
-        <p>
-          Unwind in a serene homestay surrounded by lush hills, crisp air, and soulful
-          comfort. Ideal for couples, friends, and group getaways.
+        <p class="eyebrow">Sakleshpur, Karnataka</p>
+        <h1>Premium Nature Retreat at River Lounge Stay</h1>
+        <p class="hero-text">
+          Discover a modern luxury homestay where lush landscapes, refined comfort, and warm hospitality create
+          your perfect getaway.
         </p>
-        <div class="hero-actions">
+        <div class="hero-cta">
           <a class="btn btn-primary" href="https://wa.me/919740011515" target="_blank" rel="noopener noreferrer">Book on WhatsApp</a>
-          <a class="btn btn-outline" href="#rooms">Explore Rooms</a>
+          <a class="btn btn-secondary" href="#rooms">View Rooms</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About River Lounge Stay</h2>
-        <p class="section-copy">
-          Welcome to River Lounge Stay — a modern luxury homestay in Sakleshpur crafted for
-          peaceful escapes. Enjoy premium interiors, refreshing valley vibes, and thoughtful
-          hospitality designed for relaxing, reconnecting, and making lasting memories.
-        </p>
-
-        <div class="about-grid">
-          <article class="card">
-            <h3>Why Guests Love Us</h3>
-            <p class="section-copy">
-              Scenic environment, clean and spacious rooms, warm hosting, and a quiet retreat
-              feel with easy access for weekend travelers from Karnataka and beyond.
+    <main>
+      <section class="section" id="about">
+        <div class="container grid-about">
+          <div>
+            <h2>About River Lounge Stay</h2>
+            <p>
+              River Lounge Stay is designed for travelers who seek calm, comfort, and elevated experiences in nature.
+              Enjoy a thoughtfully curated stay with premium room options, scenic surroundings, and seamless service.
             </p>
-          </article>
-          <div class="about-photo" role="img" aria-label="Nature at Sakleshpur"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="rooms">
-      <div class="container">
-        <h2 class="section-title">Room Categories</h2>
-        <p class="section-copy">
-          Choose the perfect stay style for your trip — from private couple comfort to group
-          sharing options.
-        </p>
-        <div class="rooms-grid">
-          <article class="card room-card">
-            <h3>Couple Room</h3>
-            <p>Ideal for 2 guests seeking privacy and comfort.</p>
-          </article>
-          <article class="card room-card">
-            <h3>3 Sharing Room</h3>
-            <p>Comfortable stay setup for 3 guests.</p>
-          </article>
-          <article class="card room-card">
-            <h3>4 Sharing Room</h3>
-            <p>Spacious room option for small groups of 4.</p>
-          </article>
-          <article class="card room-card">
-            <h3>6 Sharing Room</h3>
-            <p>Perfect for friends and family groups of 6.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container">
-        <h2 class="section-title">Experience & Highlights</h2>
-        <p class="section-copy">
-          Discover nature, reconnect over food and conversations, and enjoy a curated homestay
-          atmosphere with modern luxury details.
-        </p>
-        <div class="exp-grid">
-          <article class="exp-item">
-            <h3>Scenic Ambience</h3>
-            <p class="section-copy">Wake up to greenery and fresh mountain air.</p>
-          </article>
-          <article class="exp-item">
-            <h3>Comfortable Interiors</h3>
-            <p class="section-copy">Modern design with cozy, premium finishes.</p>
-          </article>
-          <article class="exp-item">
-            <h3>Group Friendly</h3>
-            <p class="section-copy">Room options for couples, families, and groups.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="gallery">
-      <div class="container">
-        <h2 class="section-title">Gallery</h2>
-        <p class="section-copy">A glimpse of the stay experience and surroundings.</p>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1501554728187-ce583db33af7?auto=format&fit=crop&w=1000&q=80" alt="Sakleshpur landscape view" loading="lazy" />
           </div>
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80" alt="Elegant homestay architecture" loading="lazy" />
-          </div>
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1000&q=80" alt="Cozy room setup" loading="lazy" />
+          <article class="glass-card">
+            <h3>Why choose us</h3>
+            <ul>
+              <li>Luxury ambience in a serene hillside setting</li>
+              <li>Room options for couples and groups</li>
+              <li>Ideal for weekend escapes and private getaways</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="rooms">
+        <div class="container">
+          <h2>Rooms</h2>
+          <p class="sub">Choose your ideal accommodation style.</p>
+          <div class="cards rooms-grid">
+            <article class="card">
+              <h3>Couple Room</h3>
+              <p>Perfect for 2 guests seeking privacy and comfort.</p>
+            </article>
+            <article class="card">
+              <h3>3 Sharing Room</h3>
+              <p>A balanced option for small friend groups.</p>
+            </article>
+            <article class="card">
+              <h3>4 Sharing Room</h3>
+              <p>Spacious and comfortable for family or friends.</p>
+            </article>
+            <article class="card">
+              <h3>6 Sharing Room</h3>
+              <p>Best for large groups who want to stay together.</p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="location">
-      <div class="container">
-        <h2 class="section-title">Location</h2>
-        <p class="section-copy">River Lounge Stay, Sakleshpur, Karnataka.</p>
-        <div class="map-wrap" style="margin-top: 1.5rem">
+      <section class="section" id="gallery">
+        <div class="container">
+          <h2>Gallery</h2>
+          <p class="sub">A glimpse into your premium resort-style escape.</p>
+          <div class="cards gallery-grid">
+            <figure class="media"><img loading="lazy" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=70" alt="Scenic hills and valley" /></figure>
+            <figure class="media"><img loading="lazy" src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1200&q=70" alt="Premium cozy room interior" /></figure>
+            <figure class="media"><img loading="lazy" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=70" alt="Luxury bed and room setup" /></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="experience">
+        <div class="container">
+          <h2>Experience</h2>
+          <div class="cards exp-grid">
+            <article class="card">
+              <h3>Nature Serenity</h3>
+              <p>Wake up to clean air, quiet mornings, and green views.</p>
+            </article>
+            <article class="card">
+              <h3>Modern Comfort</h3>
+              <p>Elegant interiors and cozy spaces crafted for relaxation.</p>
+            </article>
+            <article class="card">
+              <h3>Memorable Stays</h3>
+              <p>Perfect for couples, families, and group celebrations.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="location">
+        <div class="container">
+          <h2>Location</h2>
+          <p class="sub">River Lounge Stay, Sakleshpur, Karnataka.</p>
           <iframe
+            class="map"
             src="https://www.google.com/maps?q=Sakleshpur%2C%20Karnataka&output=embed"
-            allowfullscreen
             loading="lazy"
+            title="River Lounge Stay map"
             referrerpolicy="no-referrer-when-downgrade"
-            title="River Lounge Stay location map"
+            allowfullscreen
           ></iframe>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="contact">
-      <div class="container card">
-        <h2 class="section-title">Contact & Booking</h2>
-        <p class="section-copy">
-          Ready to plan your stay? Reach out directly for availability, pricing, and booking.
-        </p>
-        <div class="contact-box">
-          <div class="contact-lines">
-            <div><strong>Phone:</strong> <a href="tel:+919740011515">+91 9740011515</a></div>
-            <div><strong>WhatsApp:</strong> <a href="https://wa.me/919740011515" target="_blank" rel="noopener noreferrer">Chat now</a></div>
-            <div><strong>Domain:</strong> riverloungestay.com</div>
+      <section class="section alt" id="contact">
+        <div class="container contact">
+          <div>
+            <h2>Contact & Booking</h2>
+            <p class="sub">Call or message us directly for availability and booking.</p>
+            <p><strong>Phone:</strong> <a href="tel:+919740011515">+91 9740011515</a></p>
+            <p><strong>Location:</strong> Sakleshpur, Karnataka</p>
           </div>
           <a class="btn btn-primary" href="https://wa.me/919740011515" target="_blank" rel="noopener noreferrer">Book via WhatsApp</a>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <a
-      class="floating-whatsapp"
-      href="https://wa.me/919740011515"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Book on WhatsApp"
-      >WhatsApp Booking</a
-    >
+    <a class="wa-float" href="https://wa.me/919740011515" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp booking">
+      WhatsApp Booking
+    </a>
 
     <footer>
-      <div class="container">
-        © <span id="year"></span> River Lounge Stay · Designed for modern luxury stays in
-        Sakleshpur.
+      <div class="container foot">
+        <small>© <span id="year"></span> River Lounge Stay · Premium Homestay Experience</small>
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script src="script.js" defer></script>
   </body>
 </html>
